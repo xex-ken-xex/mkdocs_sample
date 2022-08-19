@@ -1,0 +1,79 @@
+site_name: TimeLine
+
+copyright: '© 2022 肉食キリン.'
+
+theme: 
+    name: material
+    # サイトの言語
+    lang: ja
+    # 通常のフォント
+    text: "Noto Sans JP"
+    # codeの等幅フォント設定
+    code: "Consolas"
+    features:
+        # ページナビゲーションを折りたたみ可能なリンクで左側に配置します。
+        - navigation.expand
+        # トップへ戻るボタン
+        - navigation.top
+        # スクロールしたときヘッダーを自動的に非表示にする
+        - header.autohide
+        # 検索の候補リスト表示を表示する
+        - search.suggest
+        # 検索で一致した結果をハイライトする
+        - search.highlight
+        # コンテンツタブ表示を有効にする
+        - content.tabs.link
+        # メニューを統合する
+        - toc.integrate
+extra_css:
+    - "//fonts.googleapis.com/earlyaccess/notosansjp.css"
+    - "//fonts.googleapis.com/css?family=Open+Sans:600,800"
+    - "css/custom.css"
+    - "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
+
+plugins:
+  # 検索機能
+  - search:
+      lang: ja
+      # インデックス対象の条件
+      separator: '[\s\-\.]'
+      # 各ページのタイトル、セクション見出し、および全文にインデックスを付けます。
+      indexing: 'full'
+
+markdown_extensions:
+    - toc:
+        # 自動生成を有効にする
+        permalink: true
+        # 目次の上に表示する文言
+        title: 見出し
+        # 見出しにする深さ
+        toc_depth: 3
+
+    - attr_list
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
+    - md_in_html
+    - pymdownx.superfences:
+        custom_fences:
+            - name: mermaid
+              class: mermaid
+              format: !!python/name:pymdownx.superfences.fence_code_format
+    - pymdownx.tabbed:
+        alternate_style: true 
+    - fontawesome_markdown
+    - admonition
+    - pymdownx.details
+    - footnotes
+    - pymdownx.keys
+    - def_list
+    - pymdownx.tasklist:
+        custom_checkbox: true
+
+nav:
+    - 区切り 1:
+        - Home: index.md
+        - About: about.md
+    - 区切り 2:
+        - Home: index.md
+        - About: about.md
